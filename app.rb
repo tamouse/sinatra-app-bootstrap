@@ -1,4 +1,20 @@
 #!/usr/bin/env ruby
+=begin
+
+app.rb
+
+*Author*::    Tamara Temple <tamara@tamaratemple.com>
+*Copyright*:: Tamara Temple Web Development
+*License*::   MIT
+*Since*::     2013-03-24T15:23:08
+
+== Description
+
+Default application file for generic sinatra application.
+
+=end
+
+
 require 'rubygems'
 require 'bundler'
 
@@ -38,7 +54,4 @@ class App < Sinatra::Base
 
 end
 
-
-if __FILE__ == $0
-  App.run!
-end
+# Start your sinatra app using rackukp! See config.ru for configuration settings.
