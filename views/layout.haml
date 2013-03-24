@@ -1,0 +1,22 @@
+!!! 5
+%html
+  %head
+    %meta{charset: 'utf8'}
+    %title= title
+    != css :app
+    != js :app
+  %body
+    %header.row-fluid
+      %span.offset2.span10
+        .page-header
+          %h1
+            = title
+            %small An example Sinatra App!
+
+    %article.row-fluid
+      %span.offset2.span8.offset2
+        = yield
+
+    %footer.row-fluid
+      %span.offset4.span8
+        Copyright &copy; 2013 by Tamara Temple Web Development

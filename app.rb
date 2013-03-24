@@ -9,6 +9,11 @@ require 'json'
 
 class App < Sinatra::Base
 
+  configure do
+    set :appname, 'My App'      # use this for page title, app heading
+  end
+
+
   set :root, File.dirname(__FILE__)
   register Sinatra::AssetPack
   assets do
@@ -28,7 +33,7 @@ class App < Sinatra::Base
 
 
   get '/' do
-    "<h1>It works!</h1><p>#{Time.now}</p>"
+    haml :main, :locals => {title: settings.appname}
   end
 
 end
