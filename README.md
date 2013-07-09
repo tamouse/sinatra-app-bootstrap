@@ -9,8 +9,8 @@ This is a spare template that includes the following items:
 * A baseline modular Sinatra app in `app.rb`.
 * Utilization of `sinatra-assetpack` to give a nice way of minifying and delivering assets such as javascript, css, and image files. This is set to deliver assets as follows:
     * Javascript files: directory `assets/javascript`.
-	* CSS files: directory `assets/css`.
-	* Image files: directory `assets/images`.
+    * CSS files: directory `assets/css`.
+    * Image files: directory `assets/images`.
 * Twitter Bootstrap formatting. The bootstrap.css and bootstratp.js files are set up in the right places as above to be handles by sintra-assetpack.
 * HAML and JSON rendering engines have been included.
 * The `views` subdirectory contains a minimal `layout.haml` and `main.haml`.
@@ -18,12 +18,38 @@ This is a spare template that includes the following items:
 * Cucumber tests are set up in the `features` subdirectory, including a nice set of web steps from `cucumber/rails`.
 * A small rakefile that will drive the RSpec and Cucumber tests with `simplecov` coverage analysis.
 * A Gemfile with the appropriate set of gems.
+* Guard with appropriate plug-ins to work with the given tools above.
 
 ## Installation
 
 Clone the template from the Github repository:
 
     git clone git://github.com/tamouse/sinatra-app-bootstrap.git <application name>
+
+Reset the origin:
+
+    git remote rename origin sinatra-app-bootstrap
+
+Create your own git repo, and name it origin:
+
+    git remote add origin <your git repo>
+
+Run bundle install:
+
+    bundle install --binstubs
+
+(--binstubs is optional, of course, but make sure you run with `bundle
+exec` instead then.)
+
+Run the guard installation:
+
+    guard init
+
+Start guard:
+
+    guard start
+
+And you should be good to go with a running copy on `http://localhost:4567`.
 
 ## Configuration
 
@@ -40,18 +66,6 @@ The `app.rb` file contains one line to set the application name:
     set :appname, 'MyApp'
 
 Change this as you'd like.
-
-## Run the tests
-
-    $ rake
-
-## Fire it up!
-
-To start up the application, you should have `rackup` installed someplace, and it's great to use `rerun` as well to reload everything while your doing development. Then you can just do:
-
-    $ rerun rackup
-
-and then point a browser at `http://localhost:4567`.
 
 ## License
 
